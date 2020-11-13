@@ -6,10 +6,15 @@ namespace Bookstore.Controllers
   {
     public ViewResult Index()
     {
-      return View();
+      return View("../../TempView/Temp");
     }
 
     public ViewResult AboutUs()
+    {
+      return View();
+    }
+
+    public ViewResult ContactUs()
     {
       return View();
     }
