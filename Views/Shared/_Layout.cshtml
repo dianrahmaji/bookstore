@@ -13,7 +13,7 @@
   <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
       <div class="container">
-        <a href="/" class="navbar-brand">
+        <a class="navbar-brand" asp-controller="home" asp-action="index">
           <img src="~/images/logo.png" alt="C# Logo" width="30" height="auto">
           Bookstore
         </a>
@@ -30,16 +30,16 @@
           </ul>
           <ul class="navbar-nav flex-grow-1">
             <li class="nav-item">
-              <a href="/" class="nav-link text-dark">Home</a>
+              <a class="nav-link text-dark" asp-controller="home" asp-action="index">Home</a>
             </li>
             <li class="nav-item">
-              <a href="/home/aboutus" class="nav-link text-dark">About</a>
+              <a class="nav-link text-dark" asp-controller="home" asp-action="aboutus">About</a>
             </li>
             <li class="nav-item">
-              <a href="/home/contactus" class="nav-link text-dark">Contact</a>
+              <a class="nav-link text-dark" asp-controller="home" asp-action="contactus">Contact</a>
             </li>
             <li class="nav-item">
-              <a href="/book/getallbooks" class="nav-link text-dark">All Books</a>
+              <a class="nav-link text-dark" asp-controller="book" asp-action="getallbooks">All Books</a>
             </li>
           </ul>
         </div>
