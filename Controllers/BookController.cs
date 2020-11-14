@@ -8,6 +8,7 @@ namespace Bookstore.Controllers
   public class BookController : Controller
   {
     private readonly BookRepository _bookRepository = null;
+
     public BookController()
     {
       _bookRepository = new BookRepository();
@@ -15,7 +16,8 @@ namespace Bookstore.Controllers
 
     public ViewResult GetAllBooks()
     {
-      return View();
+      var data = _bookRepository.GetAllBooks();
+      return View(data);
     }
 
     public BookModel GetBook(int id)

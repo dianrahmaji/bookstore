@@ -1,19 +1,30 @@
+@using Bookstore.Models;
+@model IEnumerable<BookModel>
 @{
-  Layout = null;
+  Layout = "_Layout";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get All Books</title>
-</head>
-
-<body>
-  <h1>Book List</h1>
-  <button>Click Me</button>
-</body>
-
-</html>
+<div class="container">
+  <h1>All Books</h1>
+  <div class="row">
+    @foreach (var book in Model)
+    {
+      <div class="col-md-4">
+        <div class="card shadow-sm mb-4">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+            xmlns="https://www.w3.org/2000/svg"></svg>
+          <div class="card-body">
+            <h3 class="card-title">@book.Title</h3>
+            <p class="card-text">@book.Description</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+              </div>
+              <small class="text-muted">@book.Author</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
