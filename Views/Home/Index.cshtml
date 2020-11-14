@@ -1,7 +1,14 @@
+@{
+  dynamic data = ViewBag.Data;
+}
+
 <section class="jumbotron text-center">
   <div class="container">
-    <h1 class="display-4">Welcome to Bookstore</h1>
+    <h1 class="display-4">Welcome to Bookstore @ViewBag.Title</h1>
     <p class="lead text-muted">
+      @data.Id @data.Name <br />
+      id = @ViewBag.Type.Id <br />
+      Author = @ViewBag.Type.Author <br />
       This is a simple hero unit, a simple jumbotron-style component for calling extra
       attention to
       featured content or information.
