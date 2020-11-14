@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="~/lib/twitter-bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="~/css/site.css">
+  <link rel="stylesheet" href="~/css/Site.css">
   <title>Bookstore</title>
 </head>
 
@@ -46,6 +46,11 @@
   <main role="main">
     @RenderBody()
   </main>
+  <footer class="border-top footer text-muted text-center">
+    <div class="container">
+      Copyright &copy; Book Store @DateTime.Now.Year
+    </div>
+  </footer>
 </body>
 
 </html>
