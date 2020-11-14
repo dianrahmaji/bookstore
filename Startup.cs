@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -17,6 +18,9 @@ namespace Bookstore
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddControllersWithViews();
+#if DEBUG
+      services.AddRazorPages().AddRazorRuntimeCompilation();
+#endif
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
