@@ -25,13 +25,13 @@ namespace Bookstore.Repository
     {
       return new List<BookModel>()
       {
-        new BookModel(){Id=1, Title="MVC", Author="Dian", Description="This is the description of the MVC book"},
-        new BookModel(){Id=2, Title="C#", Author="Rahmaji", Description="This is the description of the C# book"},
-        new BookModel(){Id=3, Title="React", Author="Rahmaji", Description="This is the description the of React book"},
-        new BookModel(){Id=4, Title="Vue", Author="Dian", Description="This is the description of the Vue book"},
-        new BookModel(){Id=5, Title="DevOps", Author="Dian", Description="This is the description of the DevOps book"},
-        new BookModel(){Id=6, Title="GoLang", Author="Dian", Description="This is the description of the GoLang book"},
-        new BookModel(){Id=7, Title="NodeJS", Author="Dian", Description="This is the description of the NodeJS book"},
+        new BookModel(){Id=1, Title="MVC", Author="Dian", Description="This is the description of the MVC book", Category="Programming", TotalPages=399, Language="English"},
+        new BookModel(){Id=2, Title="C#", Author="Rahmaji", Description="This is the description of the C# book", Category="Programming", TotalPages=1000, Language="Chinnese"},
+        new BookModel(){Id=3, Title="React", Author="Rahmaji", Description="This is the description the of React book", Category="Programming", TotalPages=699, Language="Japanese"},
+        new BookModel(){Id=4, Title="Vue", Author="Dian", Description="This is the description of the Vue book", Category="Programming", TotalPages=329, Language="Korean"},
+        new BookModel(){Id=5, Title="DevOps", Author="Dian", Description="This is the description of the DevOps book", Category="Programming", TotalPages=249, Language="Indonesian"},
+        new BookModel(){Id=6, Title="GoLang", Author="Dian", Description="This is the description of the GoLang book", Category="Programming", TotalPages=489, Language="Dutch"},
+        new BookModel(){Id=7, Title="NodeJS", Author="Dian", Description="This is the description of the NodeJS book", Category="Programming", TotalPages=729, Language="Russian"},
       };
     }
   }
