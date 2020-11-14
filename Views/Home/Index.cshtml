@@ -2,6 +2,22 @@
   Layout = "_Layout";
 }
 
+@section breadcrumb {
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="#">Page 1</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="#">Index</a>
+      </li>
+    </ol>
+  </nav>
+}
+
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="display-4">Welcome to Bookstore</h1>
@@ -67,3 +83,12 @@
     </div>
   </div>
 </div>
+
+@section scripts {
+  <script>
+    $(document).ready(() => {
+      //alert("document is ready")
+    })
+</script>
+}
+
