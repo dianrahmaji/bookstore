@@ -35,9 +35,25 @@ namespace Bookstore.Repository
       return book.Id;
     }
 
-    public List<BookModel> GetAllBooks()
+    public async Task<List<BookModel>> GetAllBooks()
     {
-      return DataSource();
+      var bookList = new List<BookModel>();
+      var books = await _context.Books.ToListAsync();
+      if(books.Any() == true) {
+        foreach (var book in books)
+        {
+          bookList.Add(new BookModel(){
+            Id = book.Id,
+            Author = book.Author,
+            Category = book.Category,
+            Description = book.Description,
+            Language = book.Language,
+            Title = book.Title,
+            TotalPages = book.TotalPages,
+          });
+        }
+      }
+      return bookList;
     }
 
     public BookModel GetBookById(int id)
