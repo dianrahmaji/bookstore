@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Bookstore.Data;
+using Bookstore.Repository;
 
 namespace Bookstore
 {
@@ -19,11 +20,12 @@ namespace Bookstore
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddDbContext<BookstoreContext>(options => options.UseSqlServer("Server=.;Database=BookStore;Integrated Security=True;"));
+      services.AddDbContext<BookstoreContext>(options => options.UseSqlServer("Server=.;Database=Bookstore;User Id=SA;Password=Rasenshuriken123"));
       services.AddControllersWithViews();
 #if DEBUG
       services.AddRazorPages().AddRazorRuntimeCompilation();
 #endif
+      services.AddScoped<BookRepository, BookRepository>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

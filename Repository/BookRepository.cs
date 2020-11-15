@@ -1,11 +1,38 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Bookstore.Data;
 using Bookstore.Models;
 
 namespace Bookstore.Repository
 {
   public class BookRepository
   {
+    private readonly BookstoreContext _context = null;
+
+    public BookRepository(BookstoreContext context)
+    {
+      _context = context;
+    }
+
+    public int AddNewBook(BookModel model)
+    {
+      var book = new Books()
+      {
+        Author = model.Author,
+        CreatedOn = DateTime.UtcNow,
+        Description = model.Description,
+        Title = model.Title,
+        TotalPages = model.TotalPages,
+        UpdatedOn = DateTime.UtcNow
+      };
+
+      _context.Books.Add(book);
+      _context.SaveChanges();
+
+      return book.Id;
+    }
+
     public List<BookModel> GetAllBooks()
     {
       return DataSource();
