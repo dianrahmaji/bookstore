@@ -1,6 +1,8 @@
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Bookstore.Data;
 using Bookstore.Models;
 
@@ -15,7 +17,7 @@ namespace Bookstore.Repository
       _context = context;
     }
 
-    public int AddNewBook(BookModel model)
+    public async Task<int> AddNewBook(BookModel model)
     {
       var book = new Books()
       {
@@ -27,8 +29,8 @@ namespace Bookstore.Repository
         UpdatedOn = DateTime.UtcNow
       };
 
-      _context.Books.Add(book);
-      _context.SaveChanges();
+      await _context.Books.AddAsync(book);
+      await _context.SaveChangesAsync();
 
       return book.Id;
     }
