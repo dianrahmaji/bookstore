@@ -52,8 +52,7 @@ namespace Bookstore.Controllers
         }
       }
 
-      // ViewBag.isSuccess = false;
-      // ViewBag.bookId = 0;
+      ModelState.AddModelError("", "Some fields are invalid");
 
       return View();
     }

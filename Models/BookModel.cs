@@ -13,7 +13,7 @@ namespace Bookstore.Models
     [StringLength(500)]
     public string Description { get; set; }
     public string Category { get; set; }
-    [Required(ErrorMessage = "Please enter the total pages")]
+    [Required(ErrorMessage = "Please enter the total pages.")]
     [Display(Name = "Total Pages")]
     public int? TotalPages { get; set; }
     public string Language { get; set; }
