@@ -16,6 +16,7 @@ namespace Bookstore.Models
     [Required(ErrorMessage = "Please enter the total pages.")]
     [Display(Name = "Total Pages")]
     public int? TotalPages { get; set; }
+    [Required]
     public string Language { get; set; }
   }
 }
