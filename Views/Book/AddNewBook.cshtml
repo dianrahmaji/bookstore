@@ -20,12 +20,8 @@
   <form method="post" asp-action="addnewbook" asp-controller="book">
     <div class="form-group">
       <label asp-for="Language"></label>
-      <select asp-for="Language" class="form-control">
-        <option value="">Please choose book language</option>
-        <option>Bahasa Indonesia</option>
-        <option>English</option>
-        <option>한국어</option>
-        <option>日本語</option>
+      <select asp-for="Language" class="form-control" asp-items="ViewBag.Language">
+        <option value="">Please choose your language</option>
       </select>
       <span class="text-danger" asp-validation-for="Language"></span>
     </div>

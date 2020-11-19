@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Bookstore.Models;
 using Bookstore.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Threading.Tasks;
 
 namespace Bookstore.Controllers
@@ -38,7 +39,7 @@ namespace Bookstore.Controllers
       var model = new BookModel(){
         Language = "Bahasa Indonesia"
       };
-
+      ViewBag.Language = new SelectList(new List<string>() {"Bahasa Indonesia", "English", "한국어", "日本語"});
       ViewBag.isSuccess = isSuccess;
       ViewBag.bookId = bookId;
       return View(model);
@@ -55,6 +56,9 @@ namespace Bookstore.Controllers
           return RedirectToAction(nameof(AddNewBook), new { isSuccess = true, bookId = id });
         }
       }
+
+      ViewBag.Language = new SelectList(new List<string>() {"Bahasa Indonesia", "English", "한국어", "日本語"});
+
 
       ModelState.AddModelError("", "Some fields are invalid");
 
